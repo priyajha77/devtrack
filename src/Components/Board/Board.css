@@ -1,3 +1,4 @@
+@import url(../../colors.css);
 .board {
     min-width: 290px;
     width: 290px;
@@ -12,6 +13,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px;
+    color:var(--primary-text-color-dark);
+    background-color: var(--background-color-secondary-dark);
+    border-radius: 5px;
   }
   
   .board_header_title {
@@ -23,7 +28,7 @@
   }
   
   .board_header_title span {
-    color: rgb(145, 145, 145);
+    color: var(--secondary-text-color-dark);
   }
   
   .board_header_title_more {
@@ -43,14 +48,14 @@
   }
   
   .board_cards {
-    background-color: #f8f8f8;
+    background-color: var(--background-color-secondary-dark);
     padding: 10px;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
     gap: 10px;
     overflow-y: auto;
-  }
+      }
   
   .board_add-card {
     background-color: #fff;

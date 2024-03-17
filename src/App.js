@@ -148,8 +148,12 @@ function App() {
     <div className="app">
       <div className="app_nav">
         <h1>DevTrack</h1>
-        <User />
-        <button onClick={changeTheme}>{theme ? <Sun /> : <Moon />}</button>
+        <div className="app_nav_child">
+          <button className="app_nav_theme" onClick={changeTheme}>{theme ? <Sun /> : <Moon />}</button>
+          <div className="app_nav_user">
+          <User/>
+          </div>
+        </div>
       </div>
       <div className="app_boards_container">
         <div className="app_boards">

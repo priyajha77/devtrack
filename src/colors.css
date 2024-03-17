@@ -1,0 +1,15 @@
+:root {
+    --background-color-dark: #0F0920;
+    --background-color-secondary-dark:#221C3E;
+    --primary-text-color-dark:#FFFFFF;
+    --secondary-text-color-dark: #B5B3BC;
+    --button-color-dark: #0368FF;
+    --card-color-dark:#1D2125;
+    --border-color-dark:#1D283A;
+    --background-color-light: #ffffff;
+    --primary-text-color-light:#ffffff;
+    --secondary-text-color-light: #6B788D;
+    --button-color-light: #0C66E4;
+    --card-color-light:#FFFFFF;
+    --border-color-light:#E8EAED;
+}
