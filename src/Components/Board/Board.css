@@ -55,7 +55,18 @@
     flex-direction: column;
     gap: 10px;
     overflow-y: auto;
+    height: 100%;
       }
+  .board_cards_no_issues{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--background-color-dark);
+    p{
+      font-weight: bold;
+    }
+  }
   
   .board_add-card {
     background-color: #fff;

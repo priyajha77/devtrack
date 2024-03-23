@@ -1,0 +1,91 @@
+@import url(../../colors.css);
+.container {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    min-width: 550px;
+    width: 60%;
+    max-width: 650px;
+    height: 60%;
+    /* color: white; */
+    border-radius: 5px;
+  }
+  .title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--button-color-dark);
+    cursor: default;
+  }
+  .create-button{
+    height: 36px;
+    width: 150px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    background-color: var(--button-color-dark);
+    color: var(--primary-text-color-dark);
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+  .row{
+    /* background-color: blue; */
+  }
+  input{
+    padding: 5px;
+  }
+  .row_input_title, .row_input_description {
+    height: 35px;
+    width: 100%;
+    font-size: medium;
+    font-weight: 700;
+    background-color: var(--background-color-secondary-dark);
+    border: none;
+    border-radius: 5px;
+    padding: 10px; /* Adjusted padding */
+    color: var(--secondary-text-color-dark);
+  }
+  
+  .row_input_title::placeholder, .row_input_description::placeholder {
+    font-weight: 700;
+    color: var(--secondary-text-color-dark);
+  }
+  
+  .row_input_title:focus, .row_input_description:focus {
+    color: var(--secondary-text-color-dark);
+    font-weight: 700;
+    padding: 10px;
+  }
+  
+  .row_name{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 5px;
+    color: var(--primary-text-color-dark);
+  }
+  .row_input{
+    height: 36px;
+    width: 210px;
+    background-color: var(--background-color-secondary-dark);
+    border: none;
+    border-radius: 5px;
+    color: var(--secondary-text-color-dark);
+    font-size: medium;
+    font-weight: 700;
+  }
+  .row_input option{
+    background-color: white;
+  }
+  .option_row{
+    display: flex;
+    justify-content: space-between;
+  }
+  /* .row_input{
+    background-color: pink;
+    height: ;
+  } */
+  .addTask{
+    background-color: blue;
+  }

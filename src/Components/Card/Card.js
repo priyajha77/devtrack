@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CheckSquare, Clock, MoreHorizontal } from "react-feather";
+import { Bookmark, CheckSquare, Circle, Clock, Flag, MoreHorizontal, Zap } from "react-feather";
 
 import Dropdown from "../Dropdown/Dropdown";
 
@@ -10,8 +10,8 @@ function Card(props) {
   const [showDropdown, setShowDropdown] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
-  const { id, title, date, tasks, labels } = props.card;
-
+  const { id, title, date, tasks, labels, description, type, priority } = props.card;
+  console.log('card', props.card)
   const formatDate = (value) => {
     if (!value) return "";
     const date = new Date(value);
@@ -36,6 +36,21 @@ function Card(props) {
     const month = months[date.getMonth()];
     return day + " " + month;
   };
+  const typeIcon = (type) => {
+    if(type==='Epic'){
+      return <Zap/>
+    }
+    else if(type==='Task'){
+      return <CheckSquare/>
+    }
+    else if(type==='Story'){
+      return <Bookmark/>
+    }
+    else if(type==='Bug'){
+      return <div className="bug_square"><Circle/></div>
+    }
+  }
+  const priorityColor = priority==='Low' ? 'blue' : (priority==='Medium' ? 'yellow' : 'red')
 
   return (
     <>
@@ -56,20 +71,25 @@ function Card(props) {
       >
         <div className="card_top">
           <div className="card_top_labels">
-            {labels?.map((item, index) => (
+            {/* {labels?.map((item, index) => (
               <label key={index} style={{ backgroundColor: item.color }}>
                 {item.text}
               </label>
-            ))}
+            ))}HIIIIIIIIII */}
+            {typeIcon(type)} {id}
           </div>
           <div
             className="card_top_more"
             onClick={(event) => {
               event.stopPropagation();
-              setShowDropdown(true);
+              setShowDropdown(!showDropdown);
+            }}
+            onMouseLeave={(event) => {
+              event.stopPropagation();
+              setShowDropdown(false);
             }}
           >
-            <MoreHorizontal />
+                        <MoreHorizontal />
             {showDropdown && (
               <Dropdown
                 class="board_dropdown"
@@ -83,7 +103,9 @@ function Card(props) {
           </div>
         </div>
         <div className="card_title">{title}</div>
+        {/* <div className="card_description">{description}</div> */}
         <div className="card_footer">
+        {priority && <p className={`card_footer_item_priority ${priorityColor}`}><Flag/></p>}
           {date && (
             <p className="card_footer_item">
               <Clock className="card_footer_icon" />

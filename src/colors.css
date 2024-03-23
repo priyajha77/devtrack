@@ -3,6 +3,7 @@
     --background-color-secondary-dark:#221C3E;
     --primary-text-color-dark:#FFFFFF;
     --secondary-text-color-dark: #B5B3BC;
+    --tertiary-text-color-dark: #dedceb;
     --button-color-dark: #0368FF;
     --card-color-dark:#1D2125;
     --border-color-dark:#1D283A;
@@ -13,3 +14,29 @@
     --card-color-light:#FFFFFF;
     --border-color-light:#E8EAED;
 }
+/* {
+    "id": "CN-1001",
+    "title": "HTML structure of login form",
+    "description": "Description2",
+    "date": "2024-03-27",
+    "type": "Story",
+    "priority": "High",
+    "status": "0",
+    "tasks": [
+        {
+            "id": 1711186822839.7373,
+            "completed": false,
+            "text": "First"
+        },
+        {
+            "id": 1711186826318.995,
+            "completed": false,
+            "text": "Second"
+        },
+        {
+            "id": 1711186831676.2568,
+            "completed": false,
+            "text": "Third"
+        }
+    ]
+} */

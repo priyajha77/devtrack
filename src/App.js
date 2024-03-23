@@ -4,27 +4,12 @@ import Board from "./Components/Board/Board";
 import { User, Sun, Moon } from "react-feather";
 import "./App.css";
 import Editable from "./Components/Editabled/Editable";
+import { data } from "./data/data";
 
 function App() {
   const [theme, setTheme] = useState(sessionStorage.getItem("theme") || true);
   const [boards, setBoards] = useState(
-    JSON.parse(sessionStorage.getItem("prac-kanban")) || [
-      {
-        id: 0,
-        title: "To Do",
-        cards: [],
-      },
-      {
-        id: 1,
-        title: "In Progress",
-        cards: [],
-      },
-      {
-        id: 2,
-        title: "Done",
-        cards: [],
-      },
-    ]
+    JSON.parse(sessionStorage.getItem("prac-kanban")) || data
   );
 
   const [targetCard, setTargetCard] = useState({
@@ -51,18 +36,11 @@ function App() {
     setBoards(tempBoards);
   };
 
-  const addCardHandler = (id, title) => {
-    const index = boards.findIndex((item) => item.id === id);
+  const addCardHandler = (status, cardDetails) => {
+    const index = boards.findIndex((item) => item.id == status);
     if (index < 0) return;
-
     const tempBoards = [...boards];
-    tempBoards[index].cards.push({
-      id: Date.now() + Math.random() * 2,
-      title,
-      labels: [],
-      date: "",
-      tasks: [],
-    });
+    tempBoards[index].cards.push(cardDetails);
     setBoards(tempBoards);
   };
 
@@ -160,6 +138,7 @@ function App() {
           {boards.map((item) => (
             <Board
               key={item.id}
+              title={item.title}
               board={item}
               addCard={addCardHandler}
               removeBoard={() => removeBoard(item.id)}
